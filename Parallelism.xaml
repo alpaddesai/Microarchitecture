@@ -1,0 +1,90 @@
+﻿<Window x:Class="Microarchitecture.Parallelism"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Microarchitecture"
+        mc:Ignorable="d"
+        Title="Parallelism" Height="740.979" Width="1160.186" MaxWidth="1160" MaxHeight="741">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <RichTextBox HorizontalAlignment="Left" Height="679" Margin="39,22,0,0" VerticalAlignment="Top" Width="1096" TextChanged="RichTextBox_TextChanged">
+            <FlowDocument>
+                <Paragraph BorderBrush="Black" BorderThickness="0,0,0,1" FontWeight="Bold" FontSize="17.3333333333333" FontFamily="Cambria" Margin="0,13.33,0,0" Padding="1.33" TextAlignment="Left">
+                    <Run Foreground="#FF4F81BD" FontSize="12" Text="Overview Chapter 4: Data Level Parallelism in Vector, SIMD and GPU architectures"/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="Single instruction multiple data (SIMD) architectures include vector architectures, multimedia SIMD instruction set extensions and graphics processing units (GPUs).  The MIMD which is a multiple instruction multiple data (MIMD) architecture needs to fetch one  instruction per data operation and hence SIMD is considered more energy efficient.     The first variation of the SIMD which is the vector architecture is the most efficient way to execute a vectorizable application.  Created more than 30 years ago, it is easier to understand and compile versus other SIMD variations.  The second SIMD variation includes simultaneous parallel data operations which is found in most instruction set architectures that support multimedia applications.  The third variation on SIMD comes from the graphics accelerator community provides high performance multi-core performance. "/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="Vector architectures and GPUs : " TextDecorations="Underline"/>
+                    <Run FontSize="10" Text="If a vector processor is similar to a single instruction multiple data processor then multiple SIMD processors in GPUs act as independent MIMD cores. Differences:  Multithreading is fundamental to the GPU and missing from the vector processor. "/>
+                </Paragraph>
+                <Paragraph BorderBrush="Black" BorderThickness="0,0,0,1" FontWeight="Bold" FontSize="17.3333333333333" FontFamily="Cambria" Margin="0,13.33,0,0" Padding="1.33" TextAlignment="Left">
+                    <Run Foreground="#FF4F81BD" FontSize="12" Text="Overview Chapter 5: Thread – level Parallelism"/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="Instruction level parallelism has achieved diminishing returns combined with  a growing concern on power has led to thread level parallelism.  Due to Amdahl's law effects and Dennard scaling the future of multi-core may be limited at least as a method of scaling up the performance of single applications.  Thread level parallelism  (TLP) implies the existence of multiple program counters.  Multi-processors (controlled by a single operating system that shares memory through a shared address space) utilize thread-level parallelism through different software models.   The first SW model is the execution of a tightly coupled set of threads that collaborate  on a single task this is called parallel processing.  The second SW model is the execution of multiple relatively independent processes that may have the origin of one or more users which is a form of request level parallelism.  Request level parallelism can be utilized  by a single application running on multiple processors or multiple applications running independently – called multiprogramming.    The multiprocessors communicate and coordinate through sharing of memory.   Such multiprocessors include both single chip systems with multiple cores known as multi-core and computers consisting of multiple chips typically called a multi-core.  A different concept is multi-threading, this supports multiple threads executing in an interleaved fashion on a single multiple-issue processor.   Many multi-core processors also include support for multi-threading."/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="You would think, that we would need at least n threads or processes to execute n processors and hence take advantage of the MIMD multiprocessor.  Existing shared memory multiprocessors fall into two classes depending on the number of processors involved. The # of processors will in turn dictate a memory organization and interconnect strategy.     The first group which is called symmetric (shared-memory) multiprocessors (SMPs) or centralized shared memory "/>
+                    <Run FontStyle="Italic" FontSize="10" Text="(address space is shared)"/>
+                    <Run FontSize="10" Text=" multiprocessors have 32 or fewer  cores. "/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="Most of the largest multiprocessors use some form of distributed memory, Shared memory processor architectures are also called uniform memory access (UMA) multiprocessors.   The alternative approach consists of multiprocessors with physically distributed memory called "/>
+                    <Run FontStyle="Italic" FontSize="10" Text="distributed shared memory (DSM).  "/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="Various challenges arise in centralized shared memory architectures starting from cache coherence problems. Memory held by two different processors is through their individual caches, the processors might see different values for the same memory location. This is called a cache coherence problem.  Consistency defines the behavior of reads and writes with respect to accesses to other memory locations.  "/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="Synchronization can be implemented with user level software routines that rely on hardware supplied synchronization instructions."/>
+                </Paragraph>
+                <Paragraph BorderBrush="Black" BorderThickness="0,0,0,1" FontWeight="Bold" FontSize="17.3333333333333" FontFamily="Cambria" Margin="0,13.33,0,0" Padding="1.33" TextAlignment="Left">
+                    <Run Foreground="#FF4F81BD" FontSize="12" Text="Overview Chapter 6: Warehouse–scale Computers to exploit request level and data level parallelism"/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="The warehouse-scale computer (WSC) is the foundation of internet services.   WSC have more users than high performance computing and they represent a much greater share of the IT market.   The WSC architects also share the same goals and requirements as the server architects. This includes cost performance, energy efficiency, dependability via redundancy, network I/O  and both interactive and batch processing workloads."/>
+                </Paragraph>
+                <Paragraph BorderBrush="Black" BorderThickness="0,0,0,1" FontWeight="Bold" FontSize="17.3333333333333" FontFamily="Cambria" Margin="0,13.33,0,0" Padding="1.33" TextAlignment="Left">
+                    <Run Foreground="#FF4F81BD" FontSize="12" Text="Overview Chapter 7: Domain specific Architectures"/>
+                </Paragraph>
+                <Paragraph FontStyle="Italic" FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontStyle="Normal" FontSize="10" Text="In order to design energy efficient architectures we must  lower the energy per operation.     To achieve this level of efficiency we need a drastic change in computer architecture from general purpose cores to "/>
+                    <Run FontSize="10" Text="domain specific architectures (DSAs).   "/>
+                </Paragraph>
+                <Paragraph FontStyle="Italic" FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="Guidelines for designing DSA include"/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="1.&#x9;   Reduce energy utilization by optimizing the memory cache hierarchy.  A 2 way set associative cache uses 2.5 times as much energy as an equivalent SW controlled scratchpad memory. "/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="•&#x9;Since the DSAs programmers and compiler writers understand their domain, there is no need for the HW to move data for them. "/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="2.&#x9;     Since the programmers have a better understanding of the execution of programs in these narrower domains, these resources are better spent on more processing units or larger on-chip memory.  Hence the energy is refocused to resource intensive optimizations for CPUs and GPUs ( out of order execution, multithreading, multiprocessing, prefetching  and address coalescing)"/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="3.&#x9;    Target domains for DSAs always have inherent parallelism.  The key decision for a DSA are how to take advantage of that parallelism and how to expose it to the software."/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="4.&#x9;     Utilize domain specific applications to reduce data size and type to the simplest one needed for the domain.   Applications in many domains are typically memory bound so you can increase the effective memory bandwidth and on-chip memory utilization by using narrower data types  "/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="5.&#x9;   Use domain specific programming languages to port code to the DSA "/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="6.&#x9;   Details include an example of  Deep Neural Networks"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Window>

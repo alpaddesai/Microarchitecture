@@ -1,0 +1,112 @@
+﻿<Window x:Class="Microarchitecture.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Microarchitecture"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="763.423" Width="1041.153" MaxWidth="1038" MaxHeight="1293">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="0"/>
+            <GradientStop Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid Margin="17,21,26,109">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="13*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="Quantitative_Design_and_Analysis" Content="Quantitative Design and Analysis" HorizontalAlignment="Left" Margin="13,-18,0,0" VerticalAlignment="Top" Width="218" Height="64" Click="Quantitative_Design_and_Analysis_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Image1.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Parallelism" Content="Parallelism" HorizontalAlignment="Left" Margin="240,-15,0,0" VerticalAlignment="Top" Width="223" Height="60" Click="Button_Click" Grid.ColumnSpan="2">
+            <Button.Background>
+                <ImageBrush ImageSource="Image1.png"/>
+            </Button.Background>
+        </Button>
+        <RichTextBox HorizontalAlignment="Left" Height="636" Margin="1,54,-4,-88" VerticalAlignment="Top" Width="990" TextChanged="RichTextBox_TextChanged" Grid.ColumnSpan="2">
+            <FlowDocument>
+                <Paragraph BorderBrush="Black" BorderThickness="0,0,0,1" FontWeight="Bold" FontSize="17.3333333333333" FontFamily="Times New Roman" Margin="0,13.33,0,0" Padding="1.33" TextAlignment="Left">
+                    <Run Foreground="#FF4F81BD" FontSize="12" FontFamily="Cambria" Text="Appendix A: Instruction Set Principles"/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="The ISA is the portion of the processor that is visible to the compiler writer.   The most basic differentiation amongst computer architectures is the type of internal storage.   A typical RISC architecture is the RISC-V instruction set. Other general purpose RISC architectures include MIPS, Power ISA, SPARC and Armv8. Embedded RISC processors include the ARM, Thumb2, RISC-V Compressed and microMIPS.   The 80x86, IBM 360/370 and VAX represent the older architectures.     "/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="Fundamentals components of the ISA include the stack, accumulator and a set of registers.     The general purpose register architectures have only explicit operands either register or memory locations. There are only two classes of register computers, one class accesses memory as part of any instruction called register memory architecture and the other can access memory with load and store instructions called load-store architecture. The third class rarely found today is the memory to memory architecture.  The # of required registers depends on the compiler.     Another key aspect of the ISA is the memory addressing.  How are memory addresses specified and interpreted.    Addressing modes provides ways by which the addresses are specified by the instructions.   Various addressing modes include  Register, Immediate, Displacement, Register-Indirect, Indexed, Direct or absolute, Memory indirect, Autoincrement, Autodecrement and Scaled. The operations in most instruction set architectures can be classified in the following: Arithmetic and logical, data transfer, control, system, floating point, decimal string and graphics. The instructions for the control flow include conditional branches, jumps, procedures calls and procedure returns. In summary the completed ISA as seen by the compiler writer can include a load-store architecture with displacement, immediate and register indirect addressing modes. The data can be 8, 16, 32 and 64 bit integers with 32 and 64 bit floating point data.  The instructions are simple operations including branches, jumps and link instructions for procedure calls and register indirect jumps for procedure returns.  Instructions can be encoded in variable, fixed and hybrid length. Compiler functionality includes fast compilation, debugging support and interoperability language.  Optimizations by compilers include high level optimizations, local optimizations, global optimizations, register allocation and processor dependent optimizations. "/>
+                </Paragraph>
+                <Paragraph BorderBrush="Black" BorderThickness="0,0,0,1" FontWeight="Bold" FontSize="17.3333333333333" FontFamily="Cambria" Margin="0,13.33,0,0" Padding="1.33" TextAlignment="Left">
+                    <Run Foreground="#FF4F81BD" FontSize="12" Text="Appendix B: Review of Memory Hierarchy"/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="Memory hierarchy includes cache, virtual memory, performance equations and simple optimizations.     The term cache is employed  whenever buffering is utilized to reuse commonly occurring items.  It takes advantage of the principle of locality and hence improves performance. When the processor finds a requested data item in the cache it is called a cache hit, when it does not it is considered a cache miss.  A fixed size collection of data is called block or line run retrieved from main memory and placed in the cache.  Temporal locality tells us that we are likely to utilize the word again in the near future and to place it in the cache.  Spatial locality tells us that there is a high probability that the other data in the block will be needed soon.      Time required for a cache miss depends on both the latency and BW of the memory.   Latency determines the time to retrieve the first word of the block and BW determines the time to retrieve the rest of this block.    A cache miss causes processors using in-order execution to pause and stall. The advantage of an out-of-order execution is that the result does not have to wait and the other instructions may proceed during the miss.     Hence a memory hierarchy can substantially improve performance due to locality and higher speeds of smaller memories.    "/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="Memory stall cycles = # of misses* miss penalty "/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="Memory stall clock cycles = Instruction count * memory accesses/ instruction  * miss rate * miss penalty. An example cited in the Computer architecture textbook by David Patterson 6"/>
+                    <Run Text=" "/>
+                    <Run FontSize="10" Text="th" Typography.Variants="Superscript"/>
+                    <Run Text=" "/>
+                    <Run FontSize="10" Text=" edition is that a computer with no cache misses is 1.75 times faster than a computer with a miss rate of 1% and a penalty of 50 clock cycles where CPI value is 1 and the only data accesses are loads and stores with a total of 50% of the instructions.  The virtual cache utilizes virtual addresses and physical cache uses physical addresses. However virtual caches are not very popular because the operating system and user programs may use two different virtual addresses for the same physical address. These duplicate addresses called synonyms or aliases could result in two copies of the same data in a virtual cache. If one is modified the other will have the wrong value.   HW solutions include anti-aliasing that confirms that every cache block is a unique physical address. "/>
+                </Paragraph>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="Why do cache misses occur? "/>
+                </Paragraph>
+                <List MarkerStyle="Disc" Margin="0" Padding="0" StartIndex="7">
+                    <ListItem Margin="48,0,0,0">
+                        <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                            <Run FontSize="10" Text="Compulsory:  The first access to the block cannot be in the cache, hence cold start misses or first reference misses"/>
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem Margin="48,0,0,0">
+                        <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                            <Run FontSize="10" Text="Capacity: If the cache cannot contain all blocks needed during execution of a program, capacity misses will occur. "/>
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem Margin="48,0,0,0">
+                        <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                            <Run FontSize="10" Text="Conflict:  If the block placement strategy is set associative or direct mapped conflict misses will occur because a block may be discarded and later retrieved if too many blocks map to it.  Also called collision misses. "/>
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="What are the various cache optimizations?"/>
+                </Paragraph>
+                <List MarkerStyle="Disc" Margin="0" Padding="0" StartIndex="7">
+                    <ListItem Margin="48,0,0,0">
+                        <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                            <Run FontSize="10" Text="Reducing miss rate: One can optimize the cache by increasing the cache block size, increasing cache size and having higher associativity."/>
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem Margin="48,0,0,0">
+                        <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                            <Run FontSize="10" Text="Reducing the miss penalty : Optimization includes using multi-level caches, giving reads priority over writes"/>
+                        </Paragraph>
+                    </ListItem>
+                    <ListItem Margin="48,0,0,0">
+                        <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                            <Run FontSize="10" Text="Reducing the time to hit in the cache: Optimization includes avoiding address translation when indexing the cache."/>
+                        </Paragraph>
+                    </ListItem>
+                </List>
+                <Paragraph FontSize="14.6666666666667" FontFamily="Calibri" Margin="0,0,0,13.33" TextAlignment="Justify">
+                    <Run FontSize="10" Text="Virtual memory divides physical memory into blocks and allocates them to different processors.  At any given time, a processor is running multiple processes within it's own address space. It would be too expensive to dedicate a full address space worth of memory for each process, since many processes use only a small part of their address space.  Hence virtual memory provides a means of sharing a smaller amount of physical memory among many processes."/>
+                </Paragraph>
+                <Paragraph BorderBrush="Black" BorderThickness="0,0,0,1" FontWeight="Bold" FontSize="17.3333333333333" FontFamily="Cambria" Margin="0,13.33,0,0" Padding="1.33" TextAlignment="Left">
+                    <Run Foreground="#FF4F81BD" FontSize="12" Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button x:Name="PipelineConcepts" Content="PipelineConcepts" HorizontalAlignment="Left" Margin="100,-13,0,0" VerticalAlignment="Top" Width="205" Height="57" Click="PipelineConcepts_Click" RenderTransformOrigin="0.273,0.474" Grid.Column="1">
+            <Button.Background>
+                <ImageBrush ImageSource="Image1.png"/>
+            </Button.Background>
+        </Button>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="319,-4,0,566" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="288" TextChanged="TextBox_TextChanged" Text="Reference :  Computer Architecture, John Hennessy, David Patterson"/>
+    </Grid>
+</Window>
