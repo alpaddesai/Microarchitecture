@@ -9,3 +9,6 @@
 
 ## Parallelism
 ![image](Parallelism.png)
+
+## Pipeline Concepts
+![image](PipelineConcepts.png)
