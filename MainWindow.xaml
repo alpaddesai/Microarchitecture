@@ -14,8 +14,8 @@
     </Window.Background>
     <Grid Margin="17,21,26,109">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="8*"/>
-            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="611"/>
         </Grid.ColumnDefinitions>
         <Button x:Name="Quantitative_Design_and_Analysis" Content="Quantitative Design and Analysis" HorizontalAlignment="Left" Margin="13,-18,0,0" VerticalAlignment="Top" Width="218" Height="64" Click="Quantitative_Design_and_Analysis_Click">
             <Button.Background>
