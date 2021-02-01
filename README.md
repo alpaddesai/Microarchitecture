@@ -16,3 +16,5 @@ All images are either custom by Alpa D Desai or a reference name is included. Mo
 
 ## Pipeline Concepts
 ![image](PipelineConcepts.png)
+
+Additional details : https://github.com/alpaddesai/HardwareEngineeringLab4-
