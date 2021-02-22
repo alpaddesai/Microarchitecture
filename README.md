@@ -18,15 +18,15 @@ All images are either custom by Alpa D Desai or a reference name is included. Mo
 ![image](PipelineConcepts.png)
 
 ## Interest : Critical reviews on self-selected papers
-![image](image1.png)
-![image](image2.png)
-![image](image3.png)
-![image](image4.png)
-![image](image5.png)
-![image](image6.png)
-![image](image7.png)
-![image](image8.png)
-![image](image9.png)
-![image](image10.png)
+![image](image1.jpg)
+![image](image2.jpg)
+![image](image3.jpg)
+![image](image4.jpg)
+![image](image5.jpg)
+![image](image6.jpg)
+![image](image7.jpg)
+![image](image8.jpg)
+![image](image9.jpg)
+![image](image10.jpg)
 
 Additional details : https://github.com/alpaddesai/HardwareEngineeringLab4-
