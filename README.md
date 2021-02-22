@@ -20,7 +20,6 @@ All images are either custom by Alpa D Desai or a reference name is included. Mo
 ## Interest : Critical reviews on self-selected papers
 ![image](image1.jpg)
 ![image](image2.jpg)
-![image](image3.jpg)
 ![image](image4.jpg)
 ![image](image5.jpg)
 ![image](image6.jpg)
