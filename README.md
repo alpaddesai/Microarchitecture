@@ -27,6 +27,6 @@ All images are either custom by Alpa D Desai or a reference name is included. Mo
 ![image](image8.jpg)
 ![image](image9.jpg)
 ![image](image10.jpg)
-![image](image.png)
+
 
 Additional details : https://github.com/alpaddesai/HardwareEngineeringLab4-
