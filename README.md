@@ -32,4 +32,4 @@ All images are either custom by Alpa D Desai or a reference name is included. Mo
 
 ![image](Ethics.jpg)
 
-Additional details : https://github.com/alpaddesai/HardwareEngineeringLab4-
+Additional details : https://github.com/alpaddesai/ArchitecturalProductDesign
